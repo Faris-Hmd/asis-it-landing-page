@@ -1,6 +1,5 @@
 "use client";
 
-import { Header } from "@/components/Header";
 import {
   ShieldCheck,
   Clock,
@@ -53,8 +52,6 @@ export default function AccessControlPage() {
 
   return (
     <main className="min-h-screen bg-slate-50">
-      <Header />
-
       {/* Hero Section */}
       <div className="pt-32 pb-16 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-50/50 skew-x-12 translate-x-32 -z-10" />
@@ -69,25 +66,31 @@ export default function AccessControlPage() {
             Back to Software
           </Link>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-row gap-6 md:gap-12 items-start md:items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
+              className="flex-1"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                <Lock className="w-4 h-4" /> Enterprise Security
+              <div className="inline-flex items-center gap-2 px-2 py-1 rounded-full bg-primary/10 text-primary text-[10px] md:text-sm font-medium mb-4">
+                <Lock className="w-3 h-3 md:w-4 md:h-4" /> Enterprise Security
               </div>
-              <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 font-display leading-tight">
+              <h1 className="text-xl md:text-5xl font-bold text-slate-900 mb-4 md:mb-6 font-display leading-tight">
                 Secure Your Assets with <br />
-                <span className="text-primary">ASIS Access Control</span>
+                <span className="text-primary truncate block md:inline">
+                  ASIS Access Control
+                </span>
               </h1>
-              <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
+              <p className="text-sm md:text-xl text-slate-600 leading-relaxed mb-6 md:mb-8 line-clamp-3 md:line-clamp-none">
                 The most advanced access control system designed to manage
                 movements, enhance security, and integrate seamlessly with your
                 workforce operations.
               </p>
-              <Button size="lg" className="rounded-full px-8">
+              <Button
+                size="sm"
+                className="rounded-full px-6 md:h-12 md:px-8 md:text-lg"
+              >
                 Request a Demo
               </Button>
             </motion.div>
@@ -96,40 +99,27 @@ export default function AccessControlPage() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6 }}
-              className="relative"
+              className="w-24 h-24 sm:w-48 sm:h-48 md:w-5/12 md:aspect-video shrink-0 relative"
             >
-              <div className="aspect-video bg-white rounded-3xl overflow-hidden shadow-2xl border-8 border-white group relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-blue-500/10 to-transparent flex items-center justify-center">
-                  <div className="relative">
-                    <div className="w-32 h-32 rounded-full bg-white shadow-2xl flex items-center justify-center text-primary animate-pulse border-4 border-primary/10">
-                      <ShieldCheck size={64} />
-                    </div>
-                    <div className="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-white shadow-lg">
-                      <Lock size={20} />
-                    </div>
-                  </div>
-                </div>
-                {/* Keep the img tag commented or ready for when the file is available */}
-                {/* <img
-                  src="/images/software/access-control.png"
+              <div className="w-full h-full bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg md:shadow-2xl border-2 md:border-8 border-white group relative">
+                <img
+                  src="/images/software/workforce.png"
                   alt="Access Control Illustration"
-                  className="w-full h-full object-cover"
-                /> */}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
               </div>
 
-              {/* Floating Badge */}
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-slate-100 hidden md:block">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
-                    <ShieldCheck className="w-6 h-6" />
+              {/* Floating Badge - Hidden on mobile, shown on md+ */}
+              <div className="absolute -bottom-4 -left-4 bg-white p-3 rounded-xl shadow-lg border border-slate-100 hidden md:flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
+                  <ShieldCheck size={16} />
+                </div>
+                <div>
+                  <div className="text-[10px] font-bold text-slate-900 leading-none">
+                    Total Flow Control
                   </div>
-                  <div>
-                    <div className="text-sm font-bold text-slate-900">
-                      Total Flow Control
-                    </div>
-                    <div className="text-xs text-slate-500">
-                      Real-time Ins & Outs
-                    </div>
+                  <div className="text-[8px] text-slate-500 mt-0.5">
+                    Real-time Ins & Outs
                   </div>
                 </div>
               </div>
@@ -139,7 +129,7 @@ export default function AccessControlPage() {
       </div>
 
       {/* Overview Grid */}
-      <section className="py-20">
+      <section className="py-10">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid md:grid-cols-3 gap-8">
             {sections.map((section, idx) => (

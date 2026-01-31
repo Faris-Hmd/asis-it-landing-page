@@ -29,18 +29,18 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         isScrolled
-          ? "bg-white md:bg-white/80 md:backdrop-blur-md shadow-sm py-2"
+          ? "bg-white/70 backdrop-blur-md shadow-md py-1"
           : "bg-transparent py-2",
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 h-16">
+        <Link href="/" className="flex items-center group">
           <img
             src="/images/logos/logo.png"
             alt="ASIS IT"
-            className="object-cover h-20 md:h-28 lg:h-32 w-auto "
+            className="h-12 md:h-16 lg:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
           />
         </Link>
 

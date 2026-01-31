@@ -1,7 +1,5 @@
 "use client";
 
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
 import {
   Target,
@@ -57,8 +55,6 @@ export default function AboutPage() {
 
   return (
     <main className="min-h-screen bg-slate-50">
-      <Header />
-
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 bg-white overflow-hidden">
         {/* Background Decorative Elements */}

@@ -1,5 +1,4 @@
 "use client";
-import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import {
   CheckCircle,
@@ -121,8 +120,6 @@ export default function SoftwarePage() {
 
   return (
     <main className="min-h-screen bg-slate-50">
-      <Header />
-
       {/* Hero Section */}
       <div className="pt-32 pb-12 bg-white relative overflow-hidden">
         {/* Background Decor */}
@@ -161,22 +158,22 @@ export default function SoftwarePage() {
             {softwareSolutions.map((solution, index) => (
               <div
                 key={index}
-                className={`flex flex-col md:flex-row gap-10 md:gap-16 items-center ${
-                  index % 2 === 1 ? "md:flex-row-reverse" : ""
+                className={`flex flex-row gap-6 md:gap-16 items-start md:items-center ${
+                  index % 2 === 1 ? "flex-row-reverse md:flex-row-reverse" : ""
                 }`}
               >
                 {/* Content Side */}
-                <div className="flex-1 space-y-6">
+                <div className="flex-1 space-y-4 md:space-y-6">
                   <h2 className="text-xl md:text-3xl font-bold text-slate-900 relative inline-block">
                     {solution.title}
-                    <span className="absolute -bottom-2 left-0 w-12 h-1 bg-primary rounded-full"></span>
+                    <span className="absolute -bottom-2 left-0 w-8 md:w-12 h-1 bg-primary rounded-full"></span>
                   </h2>
                   <p className="text-slate-600 leading-relaxed text-sm md:text-lg">
                     {solution.description}
                   </p>
 
-                  <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-                    <h3 className="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                  <div className="bg-white p-4 md:p-6 rounded-2xl shadow-sm border border-slate-100 hidden sm:block">
+                    <h3 className="text-base md:text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
                       Key Features
                     </h3>
                     <ul className="grid sm:grid-cols-2 gap-3">
@@ -193,7 +190,10 @@ export default function SoftwarePage() {
                   </div>
 
                   <Link href={solution.link}>
-                    <Button variant="outline" className="group">
+                    <Button
+                      variant="outline"
+                      className="group h-9 md:h-11 px-4 text-xs md:text-sm"
+                    >
                       Learn More{" "}
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
@@ -201,33 +201,33 @@ export default function SoftwarePage() {
                 </div>
 
                 {/* Visual Side */}
-                <div className="w-full md:w-5/12 aspect-square md:aspect-video rounded-3xl overflow-hidden relative shadow-2xl group border-4 border-white flex items-center justify-center">
+                <div className="w-32 h-40 sm:w-64 sm:h-80 md:w-5/12 md:aspect-[4/3] rounded-2xl md:rounded-[2.5rem] overflow-hidden relative shadow-lg md:shadow-2xl group border-2 md:border-4 border-white flex items-center justify-center shrink-0 bg-slate-100">
                   {solution.image ? (
                     <img
                       src={solution.image}
                       alt={solution.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                   ) : (
                     <div
                       className={`absolute inset-0 bg-gradient-to-br ${index % 2 === 0 ? "from-primary/20 via-blue-500/10 to-slate-100" : "from-blue-500/20 via-primary/10 to-slate-100"} opacity-100 flex items-center justify-center`}
                     >
-                      <div className="text-center space-y-4">
-                        <div className="w-24 h-24 rounded-full bg-white shadow-xl flex items-center justify-center mx-auto mb-4 text-primary animate-pulse">
+                      <div className="text-center space-y-3 md:space-y-6">
+                        <div className="w-14 h-14 md:w-32 md:h-32 rounded-3xl bg-white shadow-xl flex items-center justify-center mx-auto mb-2 md:mb-6 text-primary animate-pulse border-2 border-primary/5">
                           {solution.title.includes("Visitor") && (
-                            <Users size={48} />
+                            <Users className="w-8 h-8 md:w-16 md:h-16" />
                           )}
                           {solution.title.includes("Access") && (
-                            <ShieldCheck size={48} />
+                            <ShieldCheck className="w-8 h-8 md:w-16 md:h-16" />
                           )}
                           {solution.title.includes("Staff") && (
-                            <MapIcon size={48} />
+                            <MapIcon className="w-8 h-8 md:w-16 md:h-16" />
                           )}
                         </div>
-                        <span className="text-lg font-bold text-slate-800 opacity-60 px-8 text-center block leading-tight">
+                        <span className="text-xs md:text-2xl font-bold text-slate-800 opacity-60 px-2 md:px-12 text-center block leading-tight font-display">
                           {solution.title}
                         </span>
-                        <span className="text-xs font-medium text-slate-500 uppercase tracking-widest block">
+                        <span className="text-[10px] md:text-sm font-semibold text-slate-400 uppercase tracking-widest hidden md:block">
                           Illustration Pending
                         </span>
                       </div>
