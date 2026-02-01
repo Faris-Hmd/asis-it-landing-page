@@ -1,18 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import PWA from "@/components/PWA";
+import ScrollToTop from "@/components/ScrollToTop";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -22,6 +25,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  themeColor: "#0f172a",
 };
 
 export default function RootLayout({
@@ -32,8 +36,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-slate-900`}
+        className={`${outfit.variable} ${jakarta.variable} antialiased bg-white text-slate-900 font-jakarta`}
       >
+        <ScrollToTop />
         <PWA />
         <Header />
         <main className="min-h-screen">{children}</main>

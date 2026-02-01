@@ -130,7 +130,7 @@ export default function SoftwarePage() {
             className="w-full h-full object-cover"
           />
           {/* Dark Black Overlay for contrast */}
-          <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px]" />
+          <div className="absolute inset-0 bg-black/70 md:backdrop-blur-[1px]" />
         </div>
 
         <div className="container mx-auto px-4 md:px-6 relative z-10 py-8 md:py-12">
@@ -140,7 +140,7 @@ export default function SoftwarePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary border border-primary/30 text-sm font-medium mb-4 backdrop-blur-sm">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary border border-primary/30 text-sm font-medium mb-4 md:backdrop-blur-sm">
                 Innovating Qatar's Digital Landscape
               </div>
               <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 font-display leading-tight">
@@ -198,7 +198,7 @@ export default function SoftwarePage() {
 
                   {/* Icon Badge */}
                   <div className="absolute top-4 left-4 z-20">
-                    <div className="bg-white/90 backdrop-blur-md p-2 rounded-xl shadow-lg border border-white/20">
+                    <div className="bg-white/90 md:backdrop-blur-md p-2 rounded-xl shadow-lg border border-white/20">
                       {solution.title.includes("ERP") && (
                         <Activity className="w-5 h-5 text-primary" />
                       )}

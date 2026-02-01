@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
       "Leading provider of advanced technology and information systems in Qatar since 2001.",
     start_url: "/",
     display: "standalone",
-    background_color: "#ffffff",
-    theme_color: "#f9941e",
+    background_color: "#0f172a",
+    theme_color: "#0f172a",
     icons: [
       {
         src: "/images/logos/logo.png",

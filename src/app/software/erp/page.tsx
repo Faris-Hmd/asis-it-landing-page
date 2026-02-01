@@ -73,7 +73,7 @@ export default function ERPPage() {
             alt="ERP System Background"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/75 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-black/75 md:backdrop-blur-[2px]" />
         </div>
 
         <div className="container mx-auto px-4 md:px-6 relative z-10 py-4 md:py-6">
@@ -91,7 +91,7 @@ export default function ERPPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary border border-primary/30 text-xs font-medium mb-4 backdrop-blur-sm">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary border border-primary/30 text-xs font-medium mb-4 md:backdrop-blur-sm">
                 <Activity className="w-4 h-4" /> Comprehensive Enterprise
                 Management
               </div>
@@ -169,7 +169,7 @@ export default function ERPPage() {
                 alt="ERP Integration"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-slate-900/80 backdrop-blur-[1px]" />
+              <div className="absolute inset-0 bg-slate-900/80 md:backdrop-blur-[1px]" />
             </div>
 
             {/* Content Overlaid */}
@@ -196,7 +196,7 @@ export default function ERPPage() {
                   {features.map((feature, idx) => (
                     <div
                       key={idx}
-                      className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors"
+                      className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 md:backdrop-blur-sm hover:bg-white/10 transition-colors"
                     >
                       <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
                       <span className="text-slate-200 text-sm font-medium">
@@ -215,7 +215,7 @@ export default function ERPPage() {
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-6">
           <div className="bg-slate-900 rounded-[3rem] p-10 md:p-20 text-center text-white relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full md:blur-[100px] -translate-y-1/2 translate-x-1/2" />
             <h2 className="text-2xl md:text-5xl font-bold mb-6">
               Ready to unify your business?
             </h2>

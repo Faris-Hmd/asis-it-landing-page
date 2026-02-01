@@ -7,14 +7,15 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="relative flex items-center justify-center overflow-hidden bg-white pt-20 pb-8">
+    <section className="relative flex items-center justify-center overflow-hidden bg-slate-900 pt-24 pb-12">
       {/* Background Image */}
-      <div className="absolute inset-0 pointer-events-none opacity-20">
+      <div className="absolute inset-0 pointer-events-none">
         <img
           src="/images/hero_abs.png"
           alt="Abstract Background"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover opacity-40 mix-blend-overlay"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-slate-900/80 to-slate-900" />
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -33,12 +34,12 @@ export function Hero() {
             Leading IT Solutions Provider
           </div>
 
-          <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-secondary mb-4 font-display leading-tight">
+          <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-4 font-display leading-tight">
             Great Businesses are <br />
             <span className="text-primary relative inline-block">
               Powered
               <svg
-                className="absolute w-full h-3 -bottom-1 left-0 text-primary/20 -z-10"
+                className="absolute w-full h-3 -bottom-1 left-0 text-primary/30 -z-10"
                 viewBox="0 0 100 10"
                 preserveAspectRatio="none"
               >
@@ -53,17 +54,17 @@ export function Hero() {
             by Great People
           </h1>
 
-          <p className="text-base md:text-lg text-slate-600 mb-6 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed">
             At ASIS, we provide purpose-built solutions for your industry. From
             ERP to Workforce Management, we engineer sustainability and
             innovation.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3">
+          <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/#contact">
               <Button
                 size="lg"
-                className="h-11 px-8 text-base rounded-full shadow-lg shadow-primary/20"
+                className="h-12 px-10 text-base rounded-full shadow-lg shadow-primary/10"
               >
                 Schedule Meeting <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -72,7 +73,7 @@ export function Hero() {
               <Button
                 variant="outline"
                 size="lg"
-                className="h-11 px-8 text-base rounded-full border-2 hover:bg-slate-50"
+                className="h-12 px-10 text-base rounded-full border-2 border-white/20 text-white hover:bg-white/10"
               >
                 View Services
               </Button>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   ArrowLeft,
   HelpCircle,
@@ -69,6 +69,10 @@ export default function FAQPage() {
   const [activeCategory, setActiveCategory] = useState("General");
   const [searchQuery, setSearchQuery] = useState("");
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" as any });
+  }, []);
 
   const filteredFaqs =
     faqs
@@ -150,6 +154,8 @@ export default function FAQPage() {
                     onClick={() => {
                       setActiveCategory(cat.category);
                       setOpenIndex(0);
+                      // Force instant scroll to avoid conflicts with global smooth-scroll
+                      window.scrollTo({ top: 0, behavior: "instant" as any });
                     }}
                     className={cn(
                       "flex items-center justify-between p-4 rounded-2xl transition-all text-left font-bold",

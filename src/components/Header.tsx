@@ -33,6 +33,7 @@ export function Header() {
 
   // Determine if we are on a page that has a dark hero when transparent
   const isDarkHeroPage =
+    pathname === "/" ||
     pathname === "/about" ||
     pathname === "/software" ||
     pathname.includes("/erp") ||
@@ -85,7 +86,7 @@ export function Header() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           isScrolled || isMobileMenuOpen
-            ? "bg-white/90 backdrop-blur-md shadow-md py-1"
+            ? "bg-white md:bg-white/90 md:backdrop-blur-md shadow-md py-1"
             : "bg-transparent py-2",
         )}
       >
