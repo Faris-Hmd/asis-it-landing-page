@@ -23,19 +23,27 @@ export const Partners = () => {
                   {[
                     {
                       name: "Partner 1",
-                      img: "/images/logos/p1-removebg-preview.png",
+                      img: "/images/partners/t1.png",
                     },
                     {
                       name: "Partner 2",
-                      img: "/images/logos/p2-removebg-preview.png",
+                      img: "/images/partners/t2.png",
                     },
                     {
                       name: "Partner 3",
-                      img: "/images/logos/p3-removebg-preview.png",
+                      img: "/images/partners/t3.png",
                     },
                     {
                       name: "Partner 4",
-                      img: "/images/logos/p4-removebg-preview.png",
+                      img: "/images/partners/t4.png",
+                    },
+                    {
+                      name: "Partner 5",
+                      img: "/images/partners/t5.png",
+                    },
+                    {
+                      name: "Partner 6",
+                      img: "/images/partners/t6.png",
                     },
                   ].map((partner, idx) => (
                     <div
@@ -45,7 +53,7 @@ export const Partners = () => {
                       <img
                         src={partner.img}
                         alt={partner.name}
-                        className="max-w-full max-h-full object-contain opacity-70 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+                        className="max-w-full max-h-full object-contain transition-opacity"
                       />
                     </div>
                   ))}
@@ -79,19 +87,27 @@ export const Partners = () => {
                   {[
                     {
                       name: "Client 1",
-                      img: "/images/logos/p3-removebg-preview.png",
+                      img: "/images/cutomers-logo/1-removebg-preview.png",
                     },
                     {
                       name: "Client 2",
-                      img: "/images/logos/p1-removebg-preview.png",
-                    },
-                    {
-                      name: "Client 3",
-                      img: "/images/logos/p4-removebg-preview.png",
+                      img: "/images/cutomers-logo/2-removebg-preview.png",
                     },
                     {
                       name: "Client 4",
-                      img: "/images/logos/p2-removebg-preview.png",
+                      img: "/images/cutomers-logo/4-removebg-preview.png",
+                    },
+                    {
+                      name: "Client 5",
+                      img: "/images/cutomers-logo/5-removebg-preview.png",
+                    },
+                    {
+                      name: "Client 6",
+                      img: "/images/cutomers-logo/6-removebg-preview.png",
+                    },
+                    {
+                      name: "Client 7",
+                      img: "/images/cutomers-logo/7-removebg-preview.png",
                     },
                   ].map((client, idx) => (
                     <div
@@ -101,7 +117,7 @@ export const Partners = () => {
                       <img
                         src={client.img}
                         alt={client.name}
-                        className="max-w-full max-h-full object-contain opacity-70 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+                        className="max-w-full max-h-full object-contain transition-opacity"
                       />
                     </div>
                   ))}

@@ -1,7 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, Clock, Send } from "lucide-react";
+import {
+  Mail,
+  MapPin,
+  Phone,
+  Clock,
+  Send,
+  Link,
+  Linkedin,
+  Twitter,
+  Facebook,
+  Instagram,
+} from "lucide-react";
 import { Button } from "./Button";
 
 export function Contact() {
@@ -91,6 +102,38 @@ export function Contact() {
                     Fri - Sat: Closed
                   </p>
                 </div>
+              </div>
+            </div>
+
+            <div className="mt-8 pt-8 border-t border-slate-100">
+              <h4 className="font-bold text-secondary text-sm mb-4">
+                Follow Us
+              </h4>
+              <div className="flex gap-4">
+                <a
+                  href="#"
+                  className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:rounded-2xl transition-all shadow-sm"
+                >
+                  <Linkedin size={20} />
+                </a>
+                <a
+                  href="#"
+                  className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:rounded-2xl transition-all shadow-sm"
+                >
+                  <Twitter size={20} />
+                </a>
+                <a
+                  href="#"
+                  className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:rounded-2xl transition-all shadow-sm"
+                >
+                  <Facebook size={20} />
+                </a>
+                <a
+                  href="#"
+                  className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:rounded-2xl transition-all shadow-sm"
+                >
+                  <Instagram size={20} />
+                </a>
               </div>
             </div>
           </motion.div>

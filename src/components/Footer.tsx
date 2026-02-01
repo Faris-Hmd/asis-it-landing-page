@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 
 export function Footer() {
   return (
@@ -13,10 +14,36 @@ export function Footer() {
                 className="h-12 w-auto brightness-0 invert opacity-80"
               />
             </Link>
-            <p className="text-sm text-slate-400 leading-relaxed">
+            <p className="text-sm text-slate-400 leading-relaxed mb-6">
               Advanced Solutions for Information Systems. Pioneering IT
               excellence in Qatar since 2001.
             </p>
+            <div className="flex gap-4">
+              <a
+                href="#"
+                className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+              >
+                <Linkedin size={16} />
+              </a>
+              <a
+                href="#"
+                className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+              >
+                <Twitter size={16} />
+              </a>
+              <a
+                href="#"
+                className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+              >
+                <Facebook size={16} />
+              </a>
+              <a
+                href="#"
+                className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+              >
+                <Instagram size={16} />
+              </a>
+            </div>
           </div>
 
           <div>
@@ -28,6 +55,14 @@ export function Footer() {
                   className="hover:text-primary transition-colors"
                 >
                   About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/faq"
+                  className="hover:text-primary transition-colors"
+                >
+                  FAQ
                 </Link>
               </li>
               <li>
@@ -62,7 +97,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/software"
+                  href="/software/erp"
                   className="hover:text-primary transition-colors"
                 >
                   ERP Systems
@@ -70,10 +105,18 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/software"
+                  href="/software/hospital-management"
                   className="hover:text-primary transition-colors"
                 >
                   Hospital Management
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/software/access-control"
+                  className="hover:text-primary transition-colors"
+                >
+                  Access Control
                 </Link>
               </li>
               <li>
@@ -107,13 +150,32 @@ export function Footer() {
 
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
           <p>© {new Date().getFullYear()} ASIS. All rights reserved.</p>
-          <div className="flex gap-4 mt-4 md:mt-0">
-            <Link href="#" className="hover:text-white">
-              Privacy Policy
-            </Link>
-            <Link href="#" className="hover:text-white">
-              Terms of Service
-            </Link>
+          <div className="flex items-center gap-8 mt-4 md:mt-0">
+            <div className="flex gap-4 border-r border-slate-800 pr-8">
+              <Link
+                href="/privacy-policy"
+                className="hover:text-white transition-colors"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/terms-of-service"
+                className="hover:text-white transition-colors"
+              >
+                Terms of Service
+              </Link>
+            </div>
+            <div className="flex gap-4">
+              <a href="#" className="hover:text-white transition-colors">
+                <Linkedin size={14} />
+              </a>
+              <a href="#" className="hover:text-white transition-colors">
+                <Twitter size={14} />
+              </a>
+              <a href="#" className="hover:text-white transition-colors">
+                <Facebook size={14} />
+              </a>
+            </div>
           </div>
         </div>
       </div>

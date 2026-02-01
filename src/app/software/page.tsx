@@ -1,5 +1,5 @@
 "use client";
-import { Footer } from "@/components/Footer";
+
 import {
   CheckCircle,
   ArrowRight,
@@ -27,7 +27,7 @@ export default function SoftwarePage() {
         "Fixed Assets",
         "Comprehensive Reporting",
       ],
-      link: "/software/access-control",
+      link: "/software/erp",
       image: "/images/software/erp.png",
     },
     {
@@ -44,7 +44,7 @@ export default function SoftwarePage() {
         "Hospital Assets",
         "Medical Reporting",
       ],
-      link: "/software/access-control",
+      link: "/software/hospital-management",
       image: "/images/software/hospital.png",
     },
     {
@@ -121,87 +121,59 @@ export default function SoftwarePage() {
   return (
     <main className="min-h-screen bg-slate-50">
       {/* Hero Section */}
-      <div className="pt-32 pb-12 bg-white relative overflow-hidden">
-        {/* Background Decor */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-50/50 skew-x-12 translate-x-32 -z-10" />
-        <div className="absolute -top-24 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl -z-10 animate-pulse" />
-        <div className="absolute top-1/2 -right-20 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl -z-10" />
+      <section className="relative flex items-center pt-14 overflow-hidden min-h-[40vh] shadow-lg">
+        {/* Background Image Container */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/qatari_meeting.png"
+            alt="Qatar Business Technology"
+            className="w-full h-full object-cover"
+          />
+          {/* Dark Black Overlay for contrast */}
+          <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px]" />
+        </div>
 
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="container mx-auto px-4 md:px-6 relative z-10 py-8 md:py-12">
           <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                Innovating Technology
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary border border-primary/30 text-sm font-medium mb-4 backdrop-blur-sm">
+                Innovating Qatar's Digital Landscape
               </div>
-              <h1 className="text-3xl md:text-6xl font-bold text-slate-900 mb-6 font-display leading-tight">
-                Our <span className="text-primary bg-clip-text">Software</span>{" "}
-                <br />
-                <span className="text-slate-800">Solutions</span>
+              <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 font-display leading-tight">
+                Our{" "}
+                <span className="text-primary italic">Software Solutions</span>
               </h1>
-              <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl">
-                Empowering your business with cutting-edge software tailored to
-                streamline operations, enhance security, and drive growth.
+              <p className="text-lg md:text-xl text-slate-200 leading-relaxed max-w-2xl">
+                Empowering businesses across Qatar with cutting-edge software
+                tailored to streamline operations, enhance security, and drive
+                digital transformation.
               </p>
             </motion.div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Solutions List */}
-      <section className="py-16 md:py-24">
+      {/* Solutions Grid */}
+      <section className="py-20 md:py-32 bg-slate-50">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid gap-16 md:gap-24">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
             {softwareSolutions.map((solution, index) => (
-              <div
+              <motion.div
                 key={index}
-                className={`flex flex-row gap-6 md:gap-16 items-start md:items-center ${
-                  index % 2 === 1 ? "flex-row-reverse md:flex-row-reverse" : ""
-                }`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 flex flex-col h-full"
               >
-                {/* Content Side */}
-                <div className="flex-1 space-y-4 md:space-y-6">
-                  <h2 className="text-xl md:text-3xl font-bold text-slate-900 relative inline-block">
-                    {solution.title}
-                    <span className="absolute -bottom-2 left-0 w-8 md:w-12 h-1 bg-primary rounded-full"></span>
-                  </h2>
-                  <p className="text-slate-600 leading-relaxed text-sm md:text-lg">
-                    {solution.description}
-                  </p>
+                {/* Image / Header Visual */}
+                <div className="relative h-64 overflow-hidden bg-slate-100">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                  <div className="bg-white p-4 md:p-6 rounded-2xl shadow-sm border border-slate-100 hidden sm:block">
-                    <h3 className="text-base md:text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
-                      Key Features
-                    </h3>
-                    <ul className="grid sm:grid-cols-2 gap-3">
-                      {solution.features.map((feature, idx) => (
-                        <li
-                          key={idx}
-                          className="flex items-start gap-2 text-slate-600 text-xs md:text-sm"
-                        >
-                          <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <Link href={solution.link}>
-                    <Button
-                      variant="outline"
-                      className="group h-9 md:h-11 px-4 text-xs md:text-sm"
-                    >
-                      Learn More{" "}
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </Link>
-                </div>
-
-                {/* Visual Side */}
-                <div className="w-32 h-40 sm:w-64 sm:h-80 md:w-5/12 md:aspect-[4/3] rounded-2xl md:rounded-[2.5rem] overflow-hidden relative shadow-lg md:shadow-2xl group border-2 md:border-4 border-white flex items-center justify-center shrink-0 bg-slate-100">
                   {solution.image ? (
                     <img
                       src={solution.image}
@@ -209,38 +181,165 @@ export default function SoftwarePage() {
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                   ) : (
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-br ${index % 2 === 0 ? "from-primary/20 via-blue-500/10 to-slate-100" : "from-blue-500/20 via-primary/10 to-slate-100"} opacity-100 flex items-center justify-center`}
-                    >
-                      <div className="text-center space-y-3 md:space-y-6">
-                        <div className="w-14 h-14 md:w-32 md:h-32 rounded-3xl bg-white shadow-xl flex items-center justify-center mx-auto mb-2 md:mb-6 text-primary animate-pulse border-2 border-primary/5">
-                          {solution.title.includes("Visitor") && (
-                            <Users className="w-8 h-8 md:w-16 md:h-16" />
-                          )}
-                          {solution.title.includes("Access") && (
-                            <ShieldCheck className="w-8 h-8 md:w-16 md:h-16" />
-                          )}
-                          {solution.title.includes("Staff") && (
-                            <MapIcon className="w-8 h-8 md:w-16 md:h-16" />
-                          )}
-                        </div>
-                        <span className="text-xs md:text-2xl font-bold text-slate-800 opacity-60 px-2 md:px-12 text-center block leading-tight font-display">
-                          {solution.title}
-                        </span>
-                        <span className="text-[10px] md:text-sm font-semibold text-slate-400 uppercase tracking-widest hidden md:block">
-                          Illustration Pending
-                        </span>
+                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
+                      <div className="w-20 h-20 rounded-2xl bg-white shadow-lg flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500">
+                        {solution.title.includes("Visitor") && (
+                          <Users className="w-10 h-10" />
+                        )}
+                        {solution.title.includes("Access") && (
+                          <ShieldCheck className="w-10 h-10" />
+                        )}
+                        {solution.title.includes("Staff") && (
+                          <MapIcon className="w-10 h-10" />
+                        )}
                       </div>
                     </div>
                   )}
+
+                  {/* Icon Badge */}
+                  <div className="absolute top-4 left-4 z-20">
+                    <div className="bg-white/90 backdrop-blur-md p-2 rounded-xl shadow-lg border border-white/20">
+                      {solution.title.includes("ERP") && (
+                        <Activity className="w-5 h-5 text-primary" />
+                      )}
+                      {solution.title.includes("Hospital") && (
+                        <Briefcase className="w-5 h-5 text-blue-600" />
+                      )}
+                      {solution.title.includes("WorkForce") && (
+                        <Clock className="w-5 h-5 text-emerald-600" />
+                      )}
+                      {(solution.title.includes("Visitor") ||
+                        solution.title.includes("Access") ||
+                        solution.title.includes("Staff")) && (
+                        <Lock className="w-5 h-5 text-slate-800" />
+                      )}
+                    </div>
+                  </div>
                 </div>
-              </div>
+
+                {/* Content */}
+                <div className="p-8 flex flex-col flex-grow">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-primary transition-colors">
+                    {solution.title}
+                  </h3>
+                  <p className="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-3">
+                    {solution.description}
+                  </p>
+
+                  <div className="mt-auto space-y-6">
+                    {/* Simplified Feature List */}
+                    <div className="flex flex-wrap gap-2">
+                      {solution.features.slice(0, 3).map((feature, fIdx) => (
+                        <span
+                          key={fIdx}
+                          className="text-[10px] uppercase tracking-wider font-bold px-2 py-1 bg-slate-50 text-slate-500 rounded-md border border-slate-100"
+                        >
+                          {feature}
+                        </span>
+                      ))}
+                      {solution.features.length > 3 && (
+                        <span className="text-[10px] uppercase tracking-wider font-bold px-2 py-1 bg-primary/5 text-primary rounded-md border border-primary/10">
+                          +{solution.features.length - 3} More
+                        </span>
+                      )}
+                    </div>
+
+                    <Link href={solution.link} className="block">
+                      <Button
+                        variant="primary"
+                        className="w-full rounded-xl group/btn"
+                      >
+                        Explore Solution
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
-
-      <Footer />
     </main>
+  );
+}
+
+// Additional icons used in the grid
+function Briefcase(props: any) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
+      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+    </svg>
+  );
+}
+
+function Activity(props: any) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+    </svg>
+  );
+}
+
+function Clock(props: any) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <polyline points="12 6 12 12 16 14" />
+    </svg>
+  );
+}
+
+function Lock(props: any) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+    </svg>
   );
 }

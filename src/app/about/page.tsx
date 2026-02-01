@@ -56,29 +56,38 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-slate-50">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-white overflow-hidden">
-        {/* Background Decorative Elements */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-50/50 skew-x-12 translate-x-32 -z-10" />
-        <div className="absolute -top-24 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl -z-10" />
+      <section className="relative flex items-center pt-14 overflow-hidden min-h-[40vh]">
+        {/* Background Image Container */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/qatari_meeting.png"
+            alt="Qatar Business Meeting"
+            className="w-full h-full object-cover"
+          />
+          {/* Dark Black Overlay for contrast */}
+          <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px]" />
+        </div>
 
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="container mx-auto px-4 md:px-6 relative z-10 py-8 md:py-12">
           <div className="max-w-4xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                Established 2001
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary border border-primary/30 text-sm font-medium mb-4 backdrop-blur-sm">
+                Pioneering Qatar's IT Since 2001
               </div>
-              <h1 className="text-3xl md:text-6xl font-bold text-slate-900 mb-8 font-display leading-tight">
+              <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 font-display leading-tight">
                 Driving the Future of <br />
-                <span className="text-primary italic">Information Systems</span>
+                <span className="text-primary italic">
+                  Information Systems in Qatar
+                </span>
               </h1>
-              <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl">
+              <p className="text-lg md:text-xl text-slate-200 leading-relaxed max-w-2xl">
                 Advanced Solutions for Information Systems (ASIS) is a leading
                 provider of advanced technology and pioneer software development
-                based in Doha, Qatar.
+                deeply rooted in the development of Doha, Qatar.
               </p>
             </motion.div>
           </div>
@@ -220,11 +229,13 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="md:w-1/2 space-y-12 relative before:absolute before:left-0 md:before:left-8 before:top-4 before:bottom-4 before:w-[2px] before:bg-white/10">
+            <div className="md:w-1/2 space-y-12 relative before:absolute before:left-0 md:before:left-8 before:top-2 before:bottom-2 before:w-[2px] before:bg-primary/20">
               {milestones.map((ms, idx) => (
                 <div key={idx} className="relative pl-8 md:pl-20">
-                  <div className="absolute left-[-5px] md:left-[27px] top-1 w-3 h-3 bg-primary rounded-full shadow-[0_0_15px_rgba(193,134,10,0.5)] z-20" />
-                  <div className="absolute left-[-11px] md:left-[21px] top-[-3px] w-[14px] h-[14px] border border-primary/30 rounded-full z-10" />
+                  {/* Outer Ring */}
+                  <div className="absolute left-0 md:left-8 top-1.5 -translate-x-1/2 w-5 h-5 border-2 border-primary/30 rounded-full z-10 bg-slate-900" />
+                  {/* Inner Dot */}
+                  <div className="absolute left-0 md:left-8 top-1.5 -translate-x-1/2 translate-y-[6px] w-[8px] h-[8px] bg-primary rounded-full shadow-[0_0_12px_rgba(249,148,30,0.4)] z-20" />
 
                   <div className="text-primary font-bold text-2xl mb-2 leading-none">
                     {ms.year}

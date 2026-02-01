@@ -53,84 +53,80 @@ export default function AccessControlPage() {
   return (
     <main className="min-h-screen bg-slate-50">
       {/* Hero Section */}
-      <div className="pt-32 pb-16 bg-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-50/50 skew-x-12 translate-x-32 -z-10" />
-        <div className="absolute -top-24 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl -z-10" />
+      <div className="relative flex items-center pt-14 overflow-hidden">
+        {/* Background Image Container */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/software/workforce.png"
+            alt="Access Control Background"
+            className="w-full h-full object-cover"
+          />
+          {/* Darker Black Overlay for better contrast and visibility of nav links */}
+          <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px]" />
+        </div>
 
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="container mx-auto px-4 md:px-6 relative z-10 py-4 md:py-8">
           <Link
             href="/software"
-            className="inline-flex items-center gap-2 text-slate-500 hover:text-primary transition-colors mb-8 group"
+            className="inline-flex items-center gap-2 text-slate-300 hover:text-primary transition-colors mb-4 group"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             Back to Software
           </Link>
 
-          <div className="flex flex-row gap-6 md:gap-12 items-start md:items-center">
+          <div className="max-w-3xl">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="flex-1"
             >
-              <div className="inline-flex items-center gap-2 px-2 py-1 rounded-full bg-primary/10 text-primary text-[10px] md:text-sm font-medium mb-4">
-                <Lock className="w-3 h-3 md:w-4 md:h-4" /> Enterprise Security
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary border border-primary/30 text-sm font-medium mb-4 backdrop-blur-sm">
+                <Lock className="w-4 h-4" /> Enterprise Security
               </div>
-              <h1 className="text-xl md:text-5xl font-bold text-slate-900 mb-4 md:mb-6 font-display leading-tight">
+              <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 font-display leading-tight">
                 Secure Your Assets with <br />
-                <span className="text-primary truncate block md:inline">
-                  ASIS Access Control
-                </span>
+                <span className="text-primary italic">ASIS Access Control</span>
               </h1>
-              <p className="text-sm md:text-xl text-slate-600 leading-relaxed mb-6 md:mb-8 line-clamp-3 md:line-clamp-none">
+              <p className="text-base md:text-lg text-slate-200 leading-relaxed mb-6 max-w-2xl">
                 The most advanced access control system designed to manage
                 movements, enhance security, and integrate seamlessly with your
                 workforce operations.
               </p>
-              <Button
-                size="sm"
-                className="rounded-full px-6 md:h-12 md:px-8 md:text-lg"
-              >
-                Request a Demo
-              </Button>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              className="w-24 h-24 sm:w-48 sm:h-48 md:w-5/12 md:aspect-video shrink-0 relative"
-            >
-              <div className="w-full h-full bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg md:shadow-2xl border-2 md:border-8 border-white group relative">
-                <img
-                  src="/images/software/workforce.png"
-                  alt="Access Control Illustration"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-
-              {/* Floating Badge - Hidden on mobile, shown on md+ */}
-              <div className="absolute -bottom-4 -left-4 bg-white p-3 rounded-xl shadow-lg border border-slate-100 hidden md:flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
-                  <ShieldCheck size={16} />
-                </div>
-                <div>
-                  <div className="text-[10px] font-bold text-slate-900 leading-none">
-                    Total Flow Control
-                  </div>
-                  <div className="text-[8px] text-slate-500 mt-0.5">
-                    Real-time Ins & Outs
-                  </div>
-                </div>
+              <div className="flex flex-wrap gap-4">
+                <Button
+                  size="lg"
+                  className="rounded-full px-8 h-12 md:h-14 md:text-lg"
+                >
+                  Request a Demo
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="rounded-full px-8 h-12 md:h-14 md:text-lg text-white border-white/30 hover:bg-white/10"
+                >
+                  Learn More
+                </Button>
               </div>
             </motion.div>
           </div>
         </div>
+
+        {/* Decorative elements removed */}
       </div>
 
       {/* Overview Grid */}
-      <section className="py-10">
+      <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-2xl md:text-4xl font-bold text-slate-900 mb-4 font-display">
+              Uncompromising Security Management
+            </h2>
+            <p className="text-slate-600 text-base md:text-lg">
+              Our Access Control system provides a comprehensive suite of tools
+              designed to protect your facilities while simplifying
+              administrative oversight.
+            </p>
+          </div>
           <div className="grid md:grid-cols-3 gap-8">
             {sections.map((section, idx) => (
               <motion.div
@@ -155,28 +151,55 @@ export default function AccessControlPage() {
         </div>
       </section>
 
-      {/* Feature List Section */}
-      <section className="py-20 bg-white">
+      {/* Software Features - Full Background Version */}
+      <section className="py-20">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4 text-center">
-                Software Features
-              </h2>
-              <div className="w-20 h-1.5 bg-primary mx-auto rounded-full" />
+          <div className="relative rounded-[3rem] overflow-hidden min-h-[400px] flex items-center">
+            {/* Background Image */}
+            <div className="absolute inset-0 z-0">
+              <img
+                src="/images/contact_bg.png"
+                alt="Security Management"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-slate-900/85 backdrop-blur-[1px]" />
             </div>
 
-            <div className="grid md:grid-cols-2 gap-x-12 gap-y-6">
-              {features.map((feature, idx) => (
-                <div key={idx} className="flex items-start gap-4">
-                  <div className="mt-1 bg-primary/10 p-1 rounded-full">
-                    <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+            {/* Content Overlaid */}
+            <div className="relative z-10 w-full p-8 md:p-16">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                    Advanced Security Features
+                  </h2>
+                  <p className="text-slate-300 text-lg mb-8 leading-relaxed max-w-xl">
+                    Our access control software provides unprecedented control
+                    over your facility, integrating biometric security,
+                    real-time tracing, and automated alerts into a single
+                    powerful platform.
+                  </p>
+                  <div className="inline-flex items-center gap-4 bg-primary p-4 rounded-2xl text-white shadow-xl shadow-primary/20">
+                    <ShieldCheck className="w-8 h-8" />
+                    <div className="text-[10px] leading-tight opacity-90 uppercase tracking-widest font-semibold">
+                      Enterprise Grade <br /> Security Standards
+                    </div>
                   </div>
-                  <span className="text-slate-700 leading-relaxed">
-                    {feature}
-                  </span>
                 </div>
-              ))}
+
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {features.map((feature, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors"
+                    >
+                      <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                      <span className="text-slate-200 text-sm font-medium">
+                        {feature}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
