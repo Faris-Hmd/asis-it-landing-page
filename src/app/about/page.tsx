@@ -65,7 +65,7 @@ export default function AboutPage() {
             className="w-full h-full object-cover"
           />
           {/* Dark Black Overlay for contrast */}
-          <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px]" />
+          <div className="absolute inset-0 bg-black/80 md:bg-black/70 md:backdrop-blur-[2px]" />
         </div>
 
         <div className="container mx-auto px-4 md:px-6 relative z-10 py-8 md:py-12">
@@ -75,7 +75,7 @@ export default function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary border border-primary/30 text-sm font-medium mb-4 backdrop-blur-sm">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary border border-primary/30 text-sm font-medium mb-4 md:backdrop-blur-sm">
                 Pioneering Qatar's IT Since 2001
               </div>
               <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 font-display leading-tight">
